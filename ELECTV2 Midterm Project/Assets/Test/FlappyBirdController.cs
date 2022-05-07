@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class FlappyBirdController : MonoBehaviour
 {
     public GameObject Player;
     public Transform Position1;
@@ -12,26 +12,26 @@ public class PlayerController : MonoBehaviour
     public float timerDuration;
     [SerializeField] float timer;
 
+    public float speed;
     public Text text;
     public int score;
 
-    //Moves the player up the to the second position
     public void PlayerUp()
     {
         timer = timerDuration;
         IsUp = true;
-        Player.transform.position = Position2.position;
+        Player.transform.position = Vector2.MoveTowards(Player.transform.position, Position2.transform.position, Time.deltaTime * speed);
     }
 
     private void Update()
     {
-        //Checks if the player stops using the mic
         timer -= Time.deltaTime;
         if (timer <= 0 && IsUp == true)
         {
             IsUp = false;
-            Player.transform.position = Position1.position;
         }
+        if(IsUp == false)
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Position1.transform.position, Time.deltaTime * speed);
         text.text = score.ToString();
     }
 }

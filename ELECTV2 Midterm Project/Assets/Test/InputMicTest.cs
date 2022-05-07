@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputMic : MonoBehaviour
+public class InputMicTest : MonoBehaviour
 {
-    public PlayerController Player;
+    public FlappyBirdController Player;
     string CurrentMic = string.Empty;
     AudioClip micInput;
     float[] waveData;
@@ -13,7 +13,7 @@ public class InputMic : MonoBehaviour
     {
         if (Microphone.devices.Length > 0)
             CurrentMic = Microphone.devices[0];
-        
+
         if (CurrentMic != string.Empty)
             micInput = Microphone.Start(CurrentMic, true, 300, 48000);
     }
