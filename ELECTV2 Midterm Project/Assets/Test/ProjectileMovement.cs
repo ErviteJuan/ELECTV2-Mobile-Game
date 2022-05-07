@@ -2,15 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ProjectileMovement : MonoBehaviour
 {
+    public ScoreManager ScoreManager;
+    public UnityEvent EvtScore;
     public float speed;
-    public FlappyBirdController Player;
+    //public FlappyBirdController Player;
 
     void Start()
     {
-        Player = FindObjectOfType<FlappyBirdController>();
+        //Player = FindObjectOfType<FlappyBirdController>();
+        ScoreManager = GameObject.Find("Score Manager").GetComponent<ScoreManager>();
+        if (EvtScore == null)
+        {
+            EvtScore = new UnityEvent();
+        }
+        EvtScore.AddListener(ScoreManager.AddScore);  
     }
     void Update()
     {
@@ -21,8 +30,8 @@ public class ProjectileMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            EvtScore.Invoke();
             Destroy(gameObject);
-            Player.score += 1;
         }
     }
 }

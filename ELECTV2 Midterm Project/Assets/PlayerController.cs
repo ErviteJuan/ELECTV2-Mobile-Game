@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
     public float timerDuration;
     [SerializeField] float timer;
 
-    public Text text;
-    public int score;
 
     //Moves the player up the to the second position
     public void PlayerUp()
@@ -32,6 +30,5 @@ public class PlayerController : MonoBehaviour
             IsUp = false;
             Player.transform.position = Position1.position;
         }
-        text.text = score.ToString();
     }
 }

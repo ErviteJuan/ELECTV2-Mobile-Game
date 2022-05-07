@@ -100,7 +100,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  text: {fileID: 0}
+  EvtScore:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5025381271876843710, guid: c1b5df4ae2be1c3459ec9824c2f4abde, type: 3}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &523294553121187779
 CircleCollider2D:
   m_ObjectHideFlags: 0
