@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1d14acd164eb04b86317652f1e679d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  ScoreManager: {fileID: 0}
   EvtScore:
     m_PersistentCalls:
       m_Calls:
@@ -115,6 +115,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  speed: 8
 --- !u!58 &523294553121187779
 CircleCollider2D:
   m_ObjectHideFlags: 0
