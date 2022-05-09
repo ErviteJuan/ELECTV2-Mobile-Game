@@ -25,6 +25,6 @@ public class PauseScreen : MonoBehaviour
     }
     public void QuitButton()
     {
-        SceneManager.LoadScene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
