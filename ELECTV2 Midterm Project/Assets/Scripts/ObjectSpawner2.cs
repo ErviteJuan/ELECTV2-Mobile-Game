@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectSpawner2 : MonoBehaviour
 {
     public GameObject objectPrefab;
-    private float spawnDelay = 2f;
+    private float spawnDelay = 3f;
     private float spawnInterval = 1.5f;
     public float[] range;
     void Start()
