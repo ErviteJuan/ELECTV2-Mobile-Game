@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     public float timerDuration;
     [SerializeField] float timer;
 
+    public int playerHealth = 3;
+    public GameObject MainUi;
+    public GameObject GameOverUi;
+
 
     //Moves the player up the to the second position
     public void PlayerUp()
@@ -29,6 +33,20 @@ public class PlayerController : MonoBehaviour
         {
             IsUp = false;
             Player.transform.position = Position1.position;
+        }
+
+        //If the player has no lives left
+        if (playerHealth == 0)
+        {
+            Time.timeScale = 0;
+            GameOverUi.SetActive(true);
+            MainUi.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            GameOverUi.SetActive(false);
+            MainUi.SetActive(true);
         }
     }
 }

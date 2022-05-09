@@ -9,11 +9,9 @@ public class ProjectileMovement : MonoBehaviour
     public ScoreManager ScoreManager;
     public UnityEvent EvtScore;
     public float speed;
-    //public FlappyBirdController Player;
 
     void Start()
     {
-        //Player = FindObjectOfType<FlappyBirdController>();
         ScoreManager = GameObject.Find("Score Manager").GetComponent<ScoreManager>();
         if (EvtScore == null)
         {
