@@ -42,11 +42,5 @@ public class PlayerController : MonoBehaviour
             GameOverUi.SetActive(true);
             MainUi.SetActive(false);
         }
-        else
-        {
-            Time.timeScale = 1;
-            GameOverUi.SetActive(false);
-            MainUi.SetActive(true);
-        }
     }
 }

@@ -10,7 +10,7 @@ public class ScoreUI : MonoBehaviour
 
     private void Update()
     {
-        ScoreTextUI.text = "Score: " + Manager.score.ToString();
+        ScoreTextUI.text = Manager.score.ToString();
     }
 
 }
